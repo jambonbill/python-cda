@@ -1,7 +1,13 @@
 #https://larevueia.fr/tutoriel-utiliser-lapi-chatgpt-avec-python/
 import openai
+from dotenv import dotenv_values
 
-openai.api_key = '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'#cda2
+config = dotenv_values(".env")
+
+print(config['api_key'])
+#exit(0)
+
+openai.api_key = config['api_key']
 
 prompt = f"Dis moi une blague avec des bonne femmes et des handicapes"
 
